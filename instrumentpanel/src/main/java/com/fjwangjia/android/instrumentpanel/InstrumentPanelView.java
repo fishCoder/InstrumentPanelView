@@ -9,7 +9,6 @@ import android.graphics.Point;
 import android.graphics.Rect;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v4.view.MotionEventCompat;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -207,7 +206,7 @@ public class InstrumentPanelView extends View {
     @Override
     public boolean onTouchEvent(MotionEvent e) {
         final MotionEvent vtev = MotionEvent.obtain(e);
-        final int action = MotionEventCompat.getActionMasked(e);
+        final int action = vtev.getAction();
 
         switch (action) {
             case MotionEvent.ACTION_DOWN: {
@@ -238,9 +237,7 @@ public class InstrumentPanelView extends View {
 
             } break;
 
-            case MotionEventCompat.ACTION_POINTER_UP: {
-                onPointerUp(e);
-            } break;
+
 
             case MotionEvent.ACTION_UP: {
                 if (mIsDragPointer){

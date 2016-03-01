@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         final InstrumentPanelView instrumentPanelView = (InstrumentPanelView) findViewById(R.id.info);
+        instrumentPanelView.addBlock(new Block(0xFFDC143C,0.3f));
         instrumentPanelView.addBlock(new Block(0xFFCD4B1C,0.6f));
         instrumentPanelView.addBlock(new Block(0xFFE3B33F,0.8f));
         instrumentPanelView.addBlock(new Block(0xFF6B9E22,1f));
@@ -21,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         instrumentPanelView.postDelayed(new Runnable() {
             @Override
             public void run() {
-                instrumentPanelView.pointerTo(0.5f);
+                instrumentPanelView.pointerTo(0.6f);
             }
         }, 1000);
     }
