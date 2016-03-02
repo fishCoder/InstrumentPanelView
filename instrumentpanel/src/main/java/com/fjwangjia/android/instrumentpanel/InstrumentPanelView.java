@@ -152,7 +152,7 @@ public class InstrumentPanelView extends View {
         float fLongRadius = panels.get(0).getLongRadius();
         Point circlePoint = panels.get(0).circlePoint;
 
-        pointer.init(Utils.dpTopx(getContext(), 1), circlePoint, fLongRadius / 30, fLongRadius * 7 / 8);
+        pointer.init(Utils.dpTopx(getContext(), 1), circlePoint, fLongRadius / 30, fLongRadius * 7 / 8,iMaxRate);
         pointer.draw(canvas);
 
         for (int i=0;i<texts.size();i++){

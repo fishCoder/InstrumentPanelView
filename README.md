@@ -42,5 +42,5 @@
 ### dependencies
 
 ```
-compile 'com.fjwangjia.android:instrumentpanel:1.0.1'
+compile 'com.fjwangjia.android:instrumentpanel:1.0.2'
 ```

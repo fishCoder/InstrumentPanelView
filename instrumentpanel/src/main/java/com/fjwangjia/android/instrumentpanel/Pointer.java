@@ -29,6 +29,7 @@ public class Pointer implements Element {
     float totalOffset = 0;
     float currentRate = 0f;
     float countTime = 0;
+    float mMaxRate = 1f;
     int mBorder;
 
     public Pointer(){
@@ -42,13 +43,14 @@ public class Pointer implements Element {
      * @param radius circle radius
      * @param length the longest height of triangle
      */
-    public void init(int border,Point point,float radius,float length){
+    public void init(int border,Point point,float radius,float length,float maxRate){
         circlePoint = point;
         mRadius = radius;
         mPointerLength = length;
         mWidth = 2 * radius;
         mHeight = length + radius;
         mBorder = border;
+        mMaxRate = maxRate;
     }
 
     public void setCirclePoint(Point circlePoint) {
@@ -95,7 +97,7 @@ public class Pointer implements Element {
     }
 
     void drawTriangle(Canvas canvas){
-        float corner = currentRate * 180;
+        float corner = currentRate/mMaxRate * 180;
         float sinValue = (float) Math.sin(Math.toRadians(corner));
         float cosValue = (float) Math.cos(Math.toRadians(corner));
         float endX = circlePoint.x - mPointerLength * cosValue;

@@ -104,12 +104,12 @@ public class Panel implements Element {
         drawDivider(canvas,mRate,shortRadius,longRadius);
 
         //draw  degree scale
-        for (float i=0;(i*0.05f+mPreRate)<mRate;i++){
+        for (float i=0;i*0.05f<1;i++){
             float degreeLength = paintWidth/10;
             if(i%4==0){
                 degreeLength = paintWidth/5;
             }
-            drawDivider(canvas,(i*0.05f+mPreRate),longRadius-degreeLength,longRadius);
+            drawDivider(canvas,i*0.05f,longRadius-degreeLength,longRadius);
         }
     }
 
