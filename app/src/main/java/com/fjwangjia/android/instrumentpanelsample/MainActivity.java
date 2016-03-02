@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         instrumentPanelView.addBlock(new Block(0xFF6B9E22, 1f));
 
 
+
 //        List<Block> blocks = new ArrayList<>();
 //        blocks.add(new Block(0xFFDC143C,0.3f));
 //        instrumentPanelView.setBlockList(blocks);

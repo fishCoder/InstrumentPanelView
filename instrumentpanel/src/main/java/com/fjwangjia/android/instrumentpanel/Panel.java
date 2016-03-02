@@ -17,6 +17,8 @@ public class Panel implements Element {
 
     float mPreRate;
     float mRate;
+    float mMaxRate;
+
 
     int mColor;
 
@@ -30,10 +32,11 @@ public class Panel implements Element {
 
     Rect drawRect = new Rect();
 
-    public Panel(float preRare,float rate,int color){
+    public Panel(float preRare,float rate,int color,float maxRate){
         mColor = color;
-        mPreRate = preRare;
-        mRate = rate;
+        mPreRate = preRare/maxRate;
+        mRate = rate/maxRate;
+        mMaxRate = maxRate;
     }
 
     public Point getCirclePoint() {

@@ -103,11 +103,17 @@ public class InstrumentPanelView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
+        int size = mBlockList.size();
+        float iMaxRate = 1f;
+        if(size != 0){
+            iMaxRate = mBlockList.get(size-1).fRate;
+        }
+
         List<Text> texts = new ArrayList<>();
         texts.add(new Text(mTextSize,rateToString(pointer.currentRate),mTextColor));
         texts.add(new Text(mTextSize,"0%",mTextColor));
         for (Block block : mBlockList){
-            texts.add(new Text(mTextSize,rateToString(block.fRate),mTextColor));
+            texts.add(new Text(mTextSize,block.toString(),mTextColor));
         }
 
         int textCount = texts.size();
@@ -128,10 +134,10 @@ public class InstrumentPanelView extends View {
             Block block = mBlockList.get(i);
             Panel panel;
             if(i==0){
-                panel = new Panel(0,block.fRate,block.iColor);
+                panel = new Panel(0,block.fRate,block.iColor,iMaxRate);
             }else {
                 Block preBlock = mBlockList.get(i-1);
-                panel = new Panel(preBlock.fRate,block.fRate,block.iColor);
+                panel = new Panel(preBlock.fRate,block.fRate,block.iColor,iMaxRate);
             }
 
             panel.layout(rect);
@@ -173,10 +179,10 @@ public class InstrumentPanelView extends View {
             else
             {
                 float radius = fLongRadius + space;
-                Point point = Utils.getCircleSide(circlePoint,radius,mBlockList.get(i-2).fRate);
+                Point point = Utils.getCircleSide(circlePoint,radius,mBlockList.get(i-2).fRate/iMaxRate);
 
                 //小于90度 和 大于90度 计算坐标有所不同
-                if(mBlockList.get(i-2).fRate<0.5){
+                if(mBlockList.get(i-2).fRate/iMaxRate<0.5){
                     text.layout(new Rect(
                             (int)(point.x-width),
                             (int)(point.y+space),
