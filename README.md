@@ -1,4 +1,4 @@
-### 仪表盘 InstrumentPanel
+# 仪表盘 InstrumentPanel
 
 项目设计稿有个高光效果的仪表盘控件，网上也没有找到有高光效果的控件，于是只能自己做一个
 
@@ -36,4 +36,10 @@ instrumentPanelView.postDelayed(new Runnable() {
                 }
             }, 1000);
 
+```
+
+### dependencies
+
+```
+compile 'com.fjwangjia.android:instrumentpanel:1.0.0'
 ```

@@ -81,11 +81,16 @@ public class Panel implements Element {
                 circlePoint.x,
                 circlePoint.y,
                 longRadius,
-                new int[]{mColor, Color.WHITE, mColor},
-                new float[]{0.7f,0.75f,0.95f},
+                new int[]{mColor, mColor-0xBB000000, mColor},
+                new float[]{0.7f,0.75f,1f},
                 Shader.TileMode.CLAMP);
         paint.setShader(mRadialGradient);
 
+        Paint backgroundPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        backgroundPaint.setColor(Color.WHITE);
+        backgroundPaint.setStyle(Paint.Style.STROKE);
+        backgroundPaint.setStrokeWidth(paintWidth);
+        canvas.drawArc(rect, 180 * (1 + mPreRate), (mRate - mPreRate) * 180, false, backgroundPaint);
         canvas.drawArc(rect, 180 * (1 + mPreRate), (mRate - mPreRate) * 180, false, paint);
 
         //draw divier
