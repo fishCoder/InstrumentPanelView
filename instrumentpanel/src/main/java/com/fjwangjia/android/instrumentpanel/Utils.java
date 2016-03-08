@@ -49,7 +49,7 @@ public class Utils {
      * 阻尼震荡方程式
      * @param startOffset  起始的位移量
      * @param time         时间
-     * @return
+     * @return 相对位移量
      */
     public static float dampingFunction(float startOffset,float time){
         time = time/10;

@@ -155,7 +155,7 @@ public class Pointer implements Element {
 
         int distance = (int) Utils.pointToLine(endPoint,circlePoint,point);
 
-        return distance < mRadius*2;
+        return distance < mRadius*5;
     }
 
 
