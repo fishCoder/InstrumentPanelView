@@ -207,7 +207,7 @@ public class InstrumentPanelView extends View {
 
     int mInitialTouchX , mInitialTouchY;
     int mLastTouchX , mLastTouchY;
-    boolean mIsDragPointer = false;
+    public boolean mIsDragPointer = false;
 
     @Override
     public boolean onTouchEvent(MotionEvent e) {
