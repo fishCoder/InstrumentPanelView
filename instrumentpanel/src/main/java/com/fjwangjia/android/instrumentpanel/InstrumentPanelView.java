@@ -214,6 +214,8 @@ public class InstrumentPanelView extends View {
         final MotionEvent vtev = MotionEvent.obtain(e);
         final int action = vtev.getAction();
 
+        if(pointer == null)return true;
+
         switch (action) {
             case MotionEvent.ACTION_DOWN: {
                 mInitialTouchX = mLastTouchX = (int) (e.getX() + 0.5f);
