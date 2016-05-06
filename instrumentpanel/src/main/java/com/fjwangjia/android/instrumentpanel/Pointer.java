@@ -20,7 +20,7 @@ import java.util.TimerTask;
  */
 public class Pointer implements Element {
 
-    Point circlePoint;
+    Point circlePoint = new Point(0,0);
     float mRadius;
     float mHeight;
     float mWidth;

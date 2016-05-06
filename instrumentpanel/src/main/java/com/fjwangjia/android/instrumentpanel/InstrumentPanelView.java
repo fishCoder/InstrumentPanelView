@@ -85,7 +85,7 @@ public class InstrumentPanelView extends View {
     }
 
     public void pointerTo(float rate){
-        if(rate >=0 && rate <=1){
+        if(rate >=0){
             pointer.dampingTo(doActionHandler,rate,0);
         }
     }
